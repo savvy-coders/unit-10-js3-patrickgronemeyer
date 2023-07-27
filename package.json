@@ -1,16 +1,36 @@
 {
-  "name": "nodejs",
+  "name": "fullstackprepcourse-unit10-JS3",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Coding exercises to accompany the Front End Prep Curriculum for Savvy Coders Full Stack Web Development Bootcamp",
+  "main": "index.html",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npx cypress run"
   },
-  "keywords": [],
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/savvy-coders/FS-Prep-Unit10-JS3.git"
+  },
+  "keywords": [
+    "html",
+    "css",
+    "js",
+    "coding",
+    "bootcamp",
+    "education",
+    "training",
+    "tech",
+    "jobs",
+    "skills"
+  ],
+  "author": "David Rodriguez for Savvy Coders",
   "license": "ISC",
-  "dependencies": {
-    "@types/node": "^18.0.6",
-    "node-fetch": "^3.2.6"
+  "bugs": {
+    "url": "https://github.com/savvy-coders/FS-Prep-Unit3-HTML1/issues"
+  },
+  "homepage": "https://github.com/savvy-coders/FS-Prep-Unit3-HTML1#readme",
+  "devDependencies": {
+    "jasmine": "^5.0.2",
+    "live-server": "^1.2.2"
   }
 }
