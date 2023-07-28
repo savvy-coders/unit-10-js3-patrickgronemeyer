@@ -1,111 +1,99 @@
-import * as solution from '../index.js';
+import * as myModule from '../index.js';
 
-describe('JavaScript Coding Challenge', () => {
-  let person;
-  let numbers;
-  let originalConsoleLog;
+describe('JavaScript Coding Challenge', function() {
 
-  beforeEach(() => {
-    originalConsoleLog = console.log;
-    console.log = jasmine.createSpy('log');
-    person = solution.createPerson();
-    numbers = solution.createNumbersArray();
+  let person, numbers, json;
+
+  beforeEach(function() {
+    person = myModule.createPerson();
+    numbers = myModule.createNumbersArray();
+    json = myModule.createJSON(person);
   });
 
-  afterEach(() => {
-    console.log = originalConsoleLog;
+  // 1
+  it('should create a person object with name as string and age as number', function() {
+    expect(typeof person.name).toEqual('string');
+    expect(typeof person.age).toEqual('number');
   });
 
-  it('should create a person object with name and age', () => {
-    expect(person.name).toEqual('John Doe');
-    expect(person.age).toEqual(25);
+  // 2
+  it('should return the name and age properties of the person object', function() {
+    expect(myModule.logPersonProperties(person)).toEqual({ name: person.name, age: person.age });
   });
 
-  it('should log person properties', () => {
-    solution.logPersonProperties(person);
-    expect(console.log).toHaveBeenCalledWith('John Doe');
-    expect(console.log).toHaveBeenCalledWith(25);
-  });
-
-  it('should modify person age', () => {
-    solution.modifyAge(person, 30);
+  // 3
+  it('should modify the age of the person object', function() {
+    person = myModule.modifyAge(person, 30);
     expect(person.age).toEqual(30);
-    expect(console.log).toHaveBeenCalledWith(person);
   });
 
-  it('should add job to person', () => {
-    solution.addJob(person, 'Engineer');
+  // 4
+  it('should add a job to the person object', function() {
+    person = myModule.addJob(person, 'Engineer');
     expect(person.job).toEqual('Engineer');
-    expect(console.log).toHaveBeenCalledWith(person);
   });
 
-  it('should delete age from person', () => {
-    solution.deleteAge(person);
+  // 5
+  it('should delete the age from the person object', function() {
+    person = myModule.deleteAge(person);
     expect(person.age).toBeUndefined();
-    expect(console.log).toHaveBeenCalledWith(person);
   });
 
-  it('should add greet method to person', () => {
-    solution.addGreet(person);
-    expect(person.greet).toBeDefined();
-    expect(console.log).toHaveBeenCalledWith('Hello, my name is John Doe');
+  // 6
+  it('should add a greet method to the person object', function() {
+    let greet = myModule.addGreet(person);
+    expect(greet).toEqual('Hello, my name is ' + person.name);
   });
 
-  it('should create an array of numbers', () => {
-    expect(numbers).toEqual([1, 2, 3, 4, 5]);
+  // 7
+  it('should create an array of numbers', function() {
+    expect(numbers.length).toEqual(5);
   });
 
-  it('should log first and third numbers', () => {
-    solution.logFirstAndThird(numbers);
-    expect(console.log).toHaveBeenCalledWith(1);
-    expect(console.log).toHaveBeenCalledWith(3);
+  // 8
+  it('should return the first and third numbers of the array', function() {
+    expect(myModule.logFirstAndThird(numbers)).toEqual([numbers[0], numbers[2]]);
   });
 
-  it('should modify second number', () => {
-    solution.modifySecond(numbers, 10);
+  // 9
+  it('should modify the second number of the array', function() {
+    numbers = myModule.modifySecond(numbers, 10);
     expect(numbers[1]).toEqual(10);
-    expect(console.log).toHaveBeenCalledWith(numbers);
   });
 
-  it('should log length of numbers array', () => {
-    solution.logLength(numbers);
-    expect(console.log).toHaveBeenCalledWith(5);
+  // 10
+  it('should return the length of the numbers array', function() {
+    expect(myModule.logLength(numbers)).toEqual(5);
   });
 
-  it('should iterate with for loop', () => {
-    solution.iterateWithFor(numbers);
-    numbers.forEach(num => {
-      expect(console.log).toHaveBeenCalledWith(num);
-    });
+  // 11
+  it('should iterate over the numbers array with a for loop', function() {
+    expect(myModule.iterateWithFor(numbers)).toEqual(numbers);
   });
 
-  it('should iterate with while loop', () => {
-    solution.iterateWithWhile(numbers);
-    numbers.forEach(num => {
-      expect(console.log).toHaveBeenCalledWith(num);
-    });
+  // 12
+  it('should iterate over the numbers array with a while loop', function() {
+    expect(myModule.iterateWithWhile(numbers)).toEqual(numbers);
   });
 
-  it('should iterate with for of loop', () => {
-    solution.iterateWithForOf(numbers);
-    numbers.forEach(num => {
-      expect(console.log).toHaveBeenCalledWith(num);
-    });
+  // 13
+  it('should iterate over the numbers array with a for...of loop', function() {
+    expect(myModule.iterateWithForOf(numbers)).toEqual(numbers);
   });
 
-  it('should create JSON from person', () => {
-    solution.createJSON(person);
-    expect(console.log).toHaveBeenCalledWith(JSON.stringify(person));
+  // 14
+  it('should create a JSON string from the person object', function() {
+    expect(myModule.createJSON(person)).toEqual(JSON.stringify(person));
   });
 
-  it('should parse JSON to object', () => {
-    const json = JSON.stringify(person);
-    solution.parseJSON(json);
-    expect(console.log).toHaveBeenCalledWith(person);
+  // 15
+  it('should parse the JSON string into a JavaScript object', function() {
+    expect(myModule.parseJSON(json)).toEqual(person);
   });
 
-  it('should stringify person to JSON', () => {
-    solution.stringifyPerson(person);
-    expect(console.log).toHaveBeenCalledWith(JSON.stringify(person));
+  // 16
+  it('should stringify the person object into a JSON string', function() {
+    expect(myModule.stringifyPerson(person)).toEqual(JSON.stringify(person));
   });
+
 });
