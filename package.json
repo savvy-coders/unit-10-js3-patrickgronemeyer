@@ -2,10 +2,10 @@
   "name": "fullstackprepcourse-unit10-JS3",
   "version": "1.0.0",
   "description": "Coding exercises to accompany the Front End Prep Curriculum for Savvy Coders Full Stack Web Development Bootcamp",
-  "main": "index.html",
+  "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "npx cypress run"
+    "test": "npx jasmine"
   },
   "repository": {
     "type": "git",
@@ -26,9 +26,9 @@
   "author": "David Rodriguez for Savvy Coders",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/savvy-coders/FS-Prep-Unit3-HTML1/issues"
+    "url": "https://github.com/savvy-coders/FS-Prep-Unit10-JS3/issues"
   },
-  "homepage": "https://github.com/savvy-coders/FS-Prep-Unit3-HTML1#readme",
+  "homepage": "https://github.com/savvy-coders/FS-Prep-Unit10-JS3#readme",
   "devDependencies": {
     "jasmine": "^5.0.2",
     "live-server": "^1.2.2"
