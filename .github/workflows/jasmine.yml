@@ -1,8 +1,6 @@
 name: Run Jasmine Tests
 
-on:
-  push:
-    branches: [ '*' ]
+on: push
 
 jobs:
   build:
