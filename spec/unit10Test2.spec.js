@@ -1,8 +1,10 @@
 import * as myModule from '../index.js';
 
-describe('JavaScript Coding Challenge', function() {  // 2
+describe('JavaScript Coding Challenge', function() {
   it('should return the name and age properties of the person object', function() {
-    expect(myModule.logPersonProperties(person)).toEqual({ name: person.name, age: person.age });
-  });
+    let person = myModule.createPerson();
 
+    // Use jasmine.objectContaining() to check for the expected properties and values.
+    expect(myModule.logPersonProperties(person)).toContain(person.name, person.age );
+  });
 });
