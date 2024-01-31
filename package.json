@@ -30,7 +30,6 @@
   },
   "homepage": "https://github.com/savvy-coders/FS-Prep-Unit10-JS3#readme",
   "devDependencies": {
-    "jasmine": "^5.0.2",
     "live-server": "^1.2.2"
   }
 }
