@@ -47,3 +47,129 @@
 
 // 16. Create a function 'stringifyPerson' that takes a 'person' object as an argument, stringifies the 'person' object into a JSON string, and returns the string.
 
+// 1. Create 'createPerson' function
+function createPerson() {
+    const person = {
+      name: 'Your Name',
+      age: YourAge // Replace with your actual age
+    };
+    return person;
+  }
+  
+  // 2. Create 'logPersonProperties' function
+  function logPersonProperties(person) {
+    return `Name: ${person.name}, Age: ${person.age}`;
+  }
+  
+  // 3. Create 'modifyAge' function
+  function modifyAge(person, newAge) {
+    person.age = newAge;
+    return person;
+  }
+  
+  // 4. Create 'addJob' function
+  function addJob(person, job) {
+    person.job = job;
+    return person;
+  }
+  
+  // 5. Create 'deleteAge' function
+  function deleteAge(person) {
+    delete person.age;
+    return person;
+  }
+  
+  // 6. Create 'addGreet' function
+  function addGreet(person) {
+    person.greet = function() {
+      return `Hello, my name is ${this.name}`;
+    };
+    return person.greet();
+  }
+  
+  // 7. Create 'createNumbersArray' function
+  function createNumbersArray() {
+    const numbers = [1, 2, 3, 4, 5];
+    return numbers;
+  }
+  
+  // 8. Create 'logFirstAndThird' function
+  function logFirstAndThird(numbers) {
+    return `First: ${numbers[0]}, Third: ${numbers[2]}`;
+  }
+  
+  // 9. Create 'modifySecond' function
+  function modifySecond(numbers, newNumber) {
+    numbers[1] = newNumber;
+    return numbers;
+  }
+  
+  // 10. Create 'logLength' function
+  function logLength(numbers) {
+    return numbers.length;
+  }
+  
+  // 11. Create 'iterateWithFor' function
+  function iterateWithFor(numbers) {
+    for (let i = 0; i < numbers.length; i++) {
+      console.log(numbers[i]);
+    }
+  }
+  
+  // 12. Create 'iterateWithWhile' function
+  function iterateWithWhile(numbers) {
+    let i = 0;
+    while (i < numbers.length) {
+      console.log(numbers[i]);
+      i++;
+    }
+  }
+  
+  // 13. Create 'iterateWithForOf' function
+  function iterateWithForOf(numbers) {
+    for (const number of numbers) {
+      console.log(number);
+    }
+  }
+  
+  // 14. Create 'createJSON' function
+  function createJSON(person) {
+    const json = JSON.stringify(person);
+    return json;
+  }
+  
+  // 15. Create 'parseJSON' function
+  function parseJSON(json) {
+    const obj = JSON.parse(json);
+    return obj;
+  }
+  
+  // 16. Create 'stringifyPerson' function
+  function stringifyPerson(person) {
+    const jsonString = JSON.stringify(person);
+    return jsonString;
+  }
+  
+  // Example usage:
+  const person = createPerson();
+  console.log(logPersonProperties(person));
+  console.log(modifyAge(person, 30));
+  console.log(addJob(person, 'Developer'));
+  console.log(deleteAge(person));
+  console.log(addGreet(person));
+  const numbers = createNumbersArray();
+  console.log(logFirstAndThird(numbers));
+  console.log(modifySecond(numbers, 20));
+  console.log(logLength(numbers));
+  iterateWithFor(numbers);
+  iterateWithWhile(numbers);
+  iterateWithForOf(numbers);
+  const personJSON = createJSON(person);
+  console.log(personJSON);
+  const personObj = parseJSON(personJSON);
+  console.log(personObj);
+  const personStringified = stringifyPerson(person);
+  console.log(personStringified);
+
+
+  // Replace 'Your Name' with your actual name and YourAge with your actual age to make the createPerson function work correctly. The code provided addresses each point of the challenge by applying the concepts of JavaScript objects, arrays, loops, and JSON.
